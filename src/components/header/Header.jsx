@@ -10,18 +10,36 @@ const images = [image_one, image_two, image_three]
 
 const Header = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(false)
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 5000)
+    const preloadImages = (imageArray) => {
+      return Promise.all(
+        imageArray.map((image) => {
+          return new Promise((resolve) => {
+            const img = new Image()
+            img.src = image.src
+            img.onload = resolve
+          })
+        })
+      )
+    }
 
-    return () => clearInterval(intervalId)
+    preloadImages(images).then(() => {
+      setIsTransitionEnabled(true)
+      const intervalId = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+      }, 5000)
+
+      return () => clearInterval(intervalId)
+    })
   }, [])
 
   return (
     <header
-      className={styles.container}
+      className={`${styles.container} ${
+        isTransitionEnabled ? styles.transition : ''
+      }`}
       style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
     >
       <div className={styles.overlay}>

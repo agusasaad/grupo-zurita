@@ -4,6 +4,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+}
+
+.transition {
   transition: background-image 0.8s ease-in-out;
 }
 
