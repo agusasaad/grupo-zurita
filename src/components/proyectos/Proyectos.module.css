@@ -1,0 +1,124 @@
+.container {
+  width: 100%;
+  background-image: url('./../../assets/image/work-bg.webp');
+  background-size: cover;
+  background-position: top;
+  padding: 130px 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.info_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1450px;
+  width: 100%;
+}
+
+.info_text span {
+  font-family: var(--rubik);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2.3px;
+  color: #657078;
+}
+
+.title_button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info_text .title_button h2 {
+  font-size: 57px;
+  line-height: 75px;
+  text-transform: none;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #ffffff;
+  font-family: var(--manrope);
+  text-wrap: balance;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.title_button button {
+  font-family: var(--manrope);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22px;
+  fill: #fff;
+  color: #fff;
+  background-color: #02010100;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #e1e4e65c;
+  border-radius: 25px 25px 25px 25px;
+  padding: 17px 20px 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.container_carrucel {
+  max-width: 100vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.containerButtonLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.containerButtonRigth {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.containerButtonLeft button,
+.containerButtonRigth button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.712);
+  backdrop-filter: blur(5px);
+  padding: 30px;
+}
+
+.carrucel_projects {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  gap: 20px;
+  scrollbar-width: none;
+  position: relative;
+  scroll-behavior: smooth;
+  padding: 0px 20px;
+}
+
+.carrucel_projects .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

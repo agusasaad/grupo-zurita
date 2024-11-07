@@ -16,6 +16,21 @@
   gap: 100px;
 }
 
+.logo {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--rubik);
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+}
+.logo strong {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
 .menu {
   width: 100%;
   display: flex;

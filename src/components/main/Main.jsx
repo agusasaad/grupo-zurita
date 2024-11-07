@@ -1,12 +1,14 @@
 import AboutUs from '../aboutUs/AboutUs'
+import Proyectos from '../proyectos/Proyectos'
 import Servicios from '../servicios/Servicios'
 import styles from './Main.module.css'
 
 export const Main = () => {
   return (
-    <div className={styles.main}>
+    <main className={styles.main}>
       <Servicios />
       <AboutUs />
-    </div>
+      <Proyectos />
+    </main>
   )
 }

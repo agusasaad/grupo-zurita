@@ -5,7 +5,7 @@ import ArrowRigth from '@/assets/icon/ArrowRigth'
 
 const Servicios = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='servicios'>
       <div className={styles.card_container}>
         {servicios.map((servicio, index) => (
           <div

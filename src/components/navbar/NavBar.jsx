@@ -1,5 +1,6 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { AnimateNav } from './Animate'
 import styles from './NavBar.module.css'
 import Hamburguer from '@/assets/icon/Hamburguer'
 import Image from 'next/image'
@@ -10,9 +11,19 @@ import Email from '@/assets/icon/Email'
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
+  const navRef = useRef(null)
+
+  useEffect(() => {
+    if (window.innerWidth > 1200) {
+      AnimateNav(navRef.current)
+    }
+  }, [])
   return (
     <nav className={styles.containerNav}>
-      <div className={`${styles.nav} ${showMenu ? styles.show : ''}`}>
+      <div
+        className={`${styles.nav} ${showMenu ? styles.show : ''}`}
+        ref={navRef}
+      >
         <div className={styles.logo}>
           <Image
             src={logo}
@@ -21,6 +32,9 @@ const NavBar = () => {
             height={50}
             style={{ width: '40px', height: 'auto' }}
           />
+          <span>
+            Grupo<strong>Zurita</strong>
+          </span>
         </div>
         <div className={styles.menu}>
           <ul>
