@@ -1,5 +1,6 @@
 import NavBar from '@/components/navbar/NavBar'
 import './globals.css'
+import Footer from '@/components/footer/Footer'
 
 export const metadata = {
   title: 'Grupo Zurita',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   )

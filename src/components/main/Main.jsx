@@ -1,4 +1,5 @@
 import AboutUs from '../aboutUs/AboutUs'
+import ContactUs from '../contactUs/ContactUs'
 import Proyectos from '../proyectos/Proyectos'
 import Servicios from '../servicios/Servicios'
 import styles from './Main.module.css'
@@ -9,6 +10,7 @@ export const Main = () => {
       <Servicios />
       <AboutUs />
       <Proyectos />
+      <ContactUs />
     </main>
   )
 }
