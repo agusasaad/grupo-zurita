@@ -6,7 +6,7 @@ import image_one from '@/assets/image/image_one.jpg'
 import image_two from '@/assets/image/image_two.jpg'
 import image_three from '@/assets/image/image_three.jpg'
 
-const images = [image_one, image_two, image_three]
+const images = [image_three, image_one, image_two]
 
 const Header = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
