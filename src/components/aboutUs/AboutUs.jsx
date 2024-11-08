@@ -3,6 +3,7 @@ import styles from './AboutUs.module.css'
 import Image from 'next/image'
 import image_about from '@/assets/image/about-back.png'
 import { useState } from 'react'
+import TextCircular from './textCircular/TextCircular'
 
 const AboutUs = () => {
   const [showMore, setShowMore] = useState(false)
@@ -33,6 +34,7 @@ const AboutUs = () => {
       </div>
       <div className={styles.image_container}>
         <Image
+          className={styles.image}
           src={image_about}
           width={700}
           height={500}
@@ -42,6 +44,7 @@ const AboutUs = () => {
             objectPosition: 'center',
           }}
         />
+        <TextCircular text='GRUPO ZURITA - 34 AÑOS DE EXPERENCIA - ' />
       </div>
     </div>
   )

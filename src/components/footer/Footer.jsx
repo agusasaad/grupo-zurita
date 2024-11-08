@@ -30,48 +30,49 @@ const Footer = () => {
           <div className={styles.list}>
             <h5>Información</h5>
             <ul>
-              <Link href='/'>
+              <Link href='https://wa.me/+5491139309554' target='_blank'>
                 <li>
                   <Mobile />
                   +54 11 3930-9554
                 </li>
               </Link>
-              <Link href='/'>
+              <Link href='mailto:consultas@grupozurita.com.ar' target='_blank'>
                 <li>
                   <Email color='#4B555D' />
                   consultas@grupozurita.com.ar
                 </li>
               </Link>
-              <Link href='/'>
+              <Link
+                href='https://www.google.com/maps/place/Juan+B.+Justo+130,+Isidro+Casanova'
+                target='_blank'
+              >
                 <li>
                   <Location />
                   Juan B. Justo 130 - Isidro Casanova
                 </li>
               </Link>
-              <Link href='/'>
-                <li>
-                  <Clock />
-                  <p>LUN-VIE: 9:00 AM - 18:00 PM</p>
-                </li>
-              </Link>
+              <li>
+                <Clock />
+                <p>LUN-VIE: 9:00 AM - 18:00 PM</p>
+              </li>
             </ul>
           </div>
           <div className={styles.navigation}>
             <h5>Navegación</h5>
             <ul>
-              <Link href='/'>
+              <Link href='#home'>
                 <li>Inicio</li>
               </Link>
-              <Link href='/'>
+              <Link href='#services'>
                 <li>Servicios</li>
               </Link>
-              <Link href='/'>
+              <Link href='#aboutUs'>
                 <li>Sobre Nosotros</li>
               </Link>
-              <Link href='/'>
+              <Link href='#projects'>
                 <li>Proyectos</li>
               </Link>
-              <Link href='/'>
+              <Link href='#contactUs'>
                 <li>Contacto</li>
               </Link>
             </ul>
@@ -79,15 +80,27 @@ const Footer = () => {
           <div className={styles.social}>
             <h5>Redes Sociales</h5>
             <div className={styles.social_list}>
-              <span>
-                <Facebook color='white' />
-              </span>
-              <span>
-                <Instagram color='white' />
-              </span>
-              <span>
-                <Whatsapp color='white' />
-              </span>
+              <Link
+                href='https://www.facebook.com/profile.php?id=100081852496191'
+                target='_blank'
+              >
+                <span>
+                  <Facebook color='white' />
+                </span>
+              </Link>
+              <Link
+                href='https://www.instagram.com/grupozurita/?hl=es'
+                target='_blank'
+              >
+                <span>
+                  <Instagram color='white' />
+                </span>
+              </Link>
+              <Link href='https://wa.me/+5491139309554' target='_blank'>
+                <span>
+                  <Whatsapp color='white' />
+                </span>
+              </Link>
             </div>
           </div>
         </div>

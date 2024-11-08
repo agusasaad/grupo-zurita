@@ -47,7 +47,7 @@ const Header = () => {
           style={{ backgroundImage: `url(${image.src})` }}
         />
       ))}
-      <div className={styles.overlay}>{/* Tu contenido aquí */}</div>
+      <div className={styles.overlay}></div>
     </header>
   )
 }

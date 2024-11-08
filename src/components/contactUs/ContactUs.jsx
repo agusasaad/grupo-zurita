@@ -42,17 +42,23 @@ const ContactUs = () => {
           realidad tu visión.
         </p>
         <div className={styles.social}>
-          <Link href={'/'}>
+          <Link href='https://wa.me/+5491139309554' target='_blank'>
             <span>
               <Whatsapp />
             </span>
           </Link>
-          <Link href={'/'}>
+          <Link
+            href='https://www.instagram.com/grupozurita/?hl=es'
+            target='_blank'
+          >
             <span>
               <Instagram />
             </span>
           </Link>
-          <Link href={'/'}>
+          <Link
+            href='https://www.facebook.com/profile.php?id=100081852496191'
+            target='_blank'
+          >
             <span>
               <Facebook />
             </span>
