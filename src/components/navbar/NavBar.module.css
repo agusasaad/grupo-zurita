@@ -121,10 +121,6 @@
 }
 
 @media (max-width: 1200px) {
-  .nav {
-    padding: 20px 15px 15px 15px;
-  }
-
   .hamburguer {
     display: flex;
     order: 2;
@@ -139,18 +135,22 @@
   }
 
   .nav {
+    padding: 20px 15px 15px 15px;
+    background-color: #00000059;
     flex-wrap: wrap;
     max-height: 85px;
     overflow-y: hidden;
     row-gap: 24px;
-    transition: max-height 2s ease, background-color 2s ease-in-out;
+    backdrop-filter: blur(0px);
+    transition: max-height 2s ease, background-color 2s ease-in-out,
+      backdrop-filter 2s ease-in-out;
   }
 
   .nav.show {
     max-height: 800px;
     transition: max-height 2s ease;
-    background-color: #000000da;
-    backdrop-filter: blur(0.5px);
+    background-color: #000000ad;
+    backdrop-filter: blur(2px);
   }
 
   .menu {
@@ -163,7 +163,7 @@
 
   .menu ul {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     padding: 0px 20px 0px 10px;
   }
 

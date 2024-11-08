@@ -21,7 +21,7 @@
 .content {
   height: 100%;
   width: 90%;
-  max-width: 1600px;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,6 +118,9 @@
 }
 
 @media (max-width: 600px) {
+  .container {
+    height: 80vh;
+  }
   .content h1 {
     text-align: center;
     font-size: 40px;

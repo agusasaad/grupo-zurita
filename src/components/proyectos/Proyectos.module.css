@@ -17,7 +17,7 @@
   align-items: flex-start;
   gap: 20px;
   max-width: 1450px;
-  width: 100%;
+  width: 90%;
 }
 
 .info_text span {
@@ -121,4 +121,58 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    row-gap: 50px;
+    padding: 70px 0px;
+  }
+
+  .info_text {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    row-gap: 20px;
+  }
+
+  .title_button button {
+    display: none;
+  }
+
+  .carrucel_projects {
+    padding: 0px 20px;
+    margin-left: 20px;
+  }
+
+  .containerButtonLeft,
+  .containerButtonRigth {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 40px 0px;
+  }
+  .info_text .title_button h2 {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.4em;
+    letter-spacing: -0.5px !important;
+  }
+
+  .carrucel_projects {
+    padding: 0px 0px;
+    margin-left: 10px;
+    gap: 10px;
+  }
+
+  .card img {
+    width: 300px !important;
+    height: 300px !important;
+  }
 }

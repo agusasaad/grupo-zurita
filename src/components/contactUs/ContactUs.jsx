@@ -34,13 +34,12 @@ const ContactUs = () => {
       </div>
       <div className={styles.info_text}>
         <span>contactanos</span>
-        <h2>Conectamos contigo para hacer realidad tus proyectos</h2>
+        <h2>Convertimos Ideas</h2>
         <p>
-          Estamos aquí para escuchar tus ideas y ofrecer soluciones a medida que
-          se ajusten a tus necesidades. Ya sea que tengas una pregunta o quieras
-          iniciar un nuevo proyecto, nuestro equipo está listo para ayudarte a
-          dar el siguiente paso. Contáctanos y descubre cómo podemos trabajar
-          juntos para hacer realidad tu visión.
+          Estamos aquí para escuchar tus ideas y ofrecer soluciones
+          personalizadas. Si tienes una pregunta o deseas iniciar un nuevo
+          proyecto, contáctanos. Nuestro equipo está listo para ayudarte a hacer
+          realidad tu visión.
         </p>
         <div className={styles.social}>
           <Link href={'/'}>

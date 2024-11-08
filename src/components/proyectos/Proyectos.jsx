@@ -57,9 +57,9 @@ const Proyectos = () => {
   return (
     <div className={styles.container}>
       <div className={styles.info_text}>
-        <span>NUESTROS PROYECTOS</span>
+        <span>PROYECTOS</span>
         <div className={styles.title_button}>
-          <h2>Trabajos Destacados</h2>
+          <h2>Obras Recientes</h2>
           <button>
             Ver Todos
             <Arrow color='var(--blood-orange)' width='16px' height='16px' />

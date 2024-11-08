@@ -26,7 +26,6 @@
   background-size: cover;
   box-shadow: 10px 41px 57px -17px rgba(0, 0, 0, 0.22);
   max-width: 330px;
-  min-height: 308px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +88,11 @@
   fill: #fff;
 }
 
+.containerInfo:hover .arrow {
+  transform: rotate(-90deg);
+  transition: transform 0.4s ease;
+}
+
 .containerInfo:hover .button_card button {
   background: var(--blood-orange);
   border: 1px solid var(--blood-orange);
@@ -149,4 +153,57 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    flex-direction: column-reverse;
+    background-position: left;
+    row-gap: 20px;
+    padding: 70px 0px;
+  }
+
+  .info_text {
+    max-width: 90%;
+    gap: 10px;
+  }
+  .info_text p {
+    max-width: 900px;
+  }
+
+  .card_container {
+    width: 90%;
+    max-width: 90%;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card .containerInfo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    row-gap: 30px;
+    padding: 40px 0px;
+  }
+
+  .info_text h2 {
+    display: none;
+  }
+
+  .info_text p {
+    display: none;
+  }
 }

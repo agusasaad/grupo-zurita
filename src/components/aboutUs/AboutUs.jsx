@@ -1,28 +1,35 @@
-import Arrow from '@/assets/icon/Arrow'
+'use client'
 import styles from './AboutUs.module.css'
 import Image from 'next/image'
 import image_about from '@/assets/image/about-back.png'
+import { useState } from 'react'
 
 const AboutUs = () => {
+  const [showMore, setShowMore] = useState(false)
   return (
     <div className={styles.container}>
       <div className={styles.info_text}>
         <span>SOBRE NOSOTROS</span>
         <h2>Grupo Zurita</h2>
-        <p>
-          Somos una empresa familiar fundada en 1984 en Buenos Aires. Desde
-          entonces, hemos acompañado el crecimiento de la industria de la
-          construcción, ofreciendo productos, servicios y asesoramiento con alto
-          valor agregado. Nos enfocamos en crear lazos de confianza duraderos
-          con nuestros clientes, diferenciándonos por un servicio personalizado
-          que busca satisfacer sus necesidades de forma única.
+        <p className={`${styles.description} ${showMore ? styles.show : ''}`}>
+          Somos una empresa familiar surgida en el año 1984 en Buenos Aires.
+          Desde nuestros inicios, acompañamos el crecimiento exponencial de la
+          industria de la construcción brindando productos, servicios y
+          asesoramiento personalizado con alto valor agregado para que junto a
+          nuestros clientes creemos un lazo de confianza y desarrollo que
+          perdure en el tiempo.
+          <br />
+          <br />
+          Creemos firmemente en la estrategia de la diferenciación de servicio
+          con valor agregado, por eso día a día, nos enfocamos en encontrar las
+          mejores herramientas para satisfacer las necesidades del cliente.
         </p>
-        <div className={styles.button}>
-          <button>
-            Ver Más
-            <Arrow color='var(--blood-orange)' width='16px' height='16px' />
-          </button>
-        </div>
+        <button
+          className={styles.button_show_more}
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? 'Ver menos' : 'Ver más'}
+        </button>
       </div>
       <div className={styles.image_container}>
         <Image

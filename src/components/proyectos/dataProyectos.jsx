@@ -8,22 +8,13 @@ import image_vidrio_two from '@/assets/image/image_carrucel/vidrios_two.png'
 
 export const dataProyectos = [
   {
-    imagen: image_one,
-  },
-  {
-    imagen: image_vidrio_one,
-  },
-  {
-    imagen: image_two,
-  },
-  {
-    imagen: image_vidrio_two,
-  },
-  {
     imagen: image_three,
   },
   {
     imagen: image_four,
+  },
+  {
+    imagen: image_vidrio_two,
   },
   {
     imagen: image_five,
@@ -36,17 +27,5 @@ export const dataProyectos = [
   },
   {
     imagen: image_two,
-  },
-  {
-    imagen: image_vidrio_two,
-  },
-  {
-    imagen: image_three,
-  },
-  {
-    imagen: image_four,
-  },
-  {
-    imagen: image_five,
   },
 ]

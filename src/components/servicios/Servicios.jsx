@@ -28,7 +28,7 @@ const Servicios = () => {
       </div>
       <div className={styles.info_text}>
         <span>NUESTROS SERVICIOS</span>
-        <h2>Servicios diseñados para transformar tus espacios</h2>
+        <h2>Soluciones para tus espacios</h2>
         <p>
           Ofrecemos una amplia gama de servicios personalizados en construcción,
           aberturas y más, pensados para satisfacer las necesidades de cada
