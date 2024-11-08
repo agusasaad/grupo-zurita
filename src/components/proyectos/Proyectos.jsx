@@ -55,7 +55,7 @@ const Proyectos = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='projects'>
       <div className={styles.info_text}>
         <span>PROYECTOS</span>
         <div className={styles.title_button}>

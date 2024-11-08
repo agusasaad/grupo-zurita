@@ -7,7 +7,7 @@ import { useState } from 'react'
 const AboutUs = () => {
   const [showMore, setShowMore] = useState(false)
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='aboutUs'>
       <div className={styles.info_text}>
         <span>SOBRE NOSOTROS</span>
         <h2>Grupo Zurita</h2>

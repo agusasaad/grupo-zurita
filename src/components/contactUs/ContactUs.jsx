@@ -7,7 +7,7 @@ import Facebook from '@/assets/icon/Facebook'
 
 const ContactUs = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id='contactUs'>
       <div className={styles.form_container}>
         <form className={styles.form}>
           <div className={styles.inputs}>

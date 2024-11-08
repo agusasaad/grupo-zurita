@@ -15,6 +15,7 @@ body {
   font-style: normal;
   scrollbar-width: none;
   background: black;
+  scroll-behavior: smooth;
 }
 
 * {

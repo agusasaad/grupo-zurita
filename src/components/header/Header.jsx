@@ -13,6 +13,7 @@ const Header = () => {
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(false)
 
   useEffect(() => {
+    // Preload images
     const preloadImages = (imageArray) => {
       return Promise.all(
         imageArray.map((image) => {
@@ -36,14 +37,25 @@ const Header = () => {
   }, [])
 
   return (
-    <header
-      className={`${styles.container} ${
-        isTransitionEnabled ? styles.transition : ''
-      }`}
-      style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
-    >
-      <div className={styles.overlay}>
-        {/* <div className={styles.content}>
+    <header className={styles.container} id='home'>
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className={`${styles.image} ${
+            currentImageIndex === index ? styles.visible : ''
+          }`}
+          style={{ backgroundImage: `url(${image.src})` }}
+        />
+      ))}
+      <div className={styles.overlay}>{/* Tu contenido aquí */}</div>
+    </header>
+  )
+}
+
+export default Header
+
+{
+  /* <div className={styles.content}>
           <h1>Construcción & Aberturas de Calidad</h1>
           <p>
             Acompañando el crecimiento exponencial de la industria de la
@@ -56,10 +68,5 @@ const Header = () => {
               <Arrow width='15px' height='15px' />
             </button>
           </div>
-        </div> */}
-      </div>
-    </header>
-  )
+        </div> */
 }
-
-export default Header

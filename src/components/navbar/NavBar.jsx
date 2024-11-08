@@ -8,10 +8,14 @@ import logo from '@/assets/image/LogoZurita.png'
 import Arrow from '@/assets/icon/Arrow'
 import Phone from '@/assets/icon/Phone'
 import Email from '@/assets/icon/Email'
+import Link from 'next/link'
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
   const navRef = useRef(null)
+  const mensaje = encodeURIComponent(
+    'Hola, estoy interesado en recibir una cotización para aberturas de PVC y otros servicios relacionados. ¿Podrían enviarme más detalles y precios?'
+  )
 
   useEffect(() => {
     if (window.innerWidth > 1200) {
@@ -24,43 +28,94 @@ const NavBar = () => {
         className={`${styles.nav} ${showMenu ? styles.show : ''}`}
         ref={navRef}
       >
-        <div className={styles.logo}>
-          <Image
-            src={logo}
-            alt='Logo'
-            width={50}
-            height={50}
-            style={{ width: '40px', height: 'auto' }}
-          />
-          <span>
-            Grupo<strong>Zurita</strong>
-          </span>
-        </div>
+        <Link href={'/'} onClick={() => setShowMenu(false)}>
+          <div className={styles.logo}>
+            <Image
+              src={logo}
+              alt='Logo'
+              width={50}
+              height={50}
+              style={{ width: '40px', height: 'auto' }}
+            />
+            <span>
+              Grupo<strong>Zurita</strong>
+            </span>
+          </div>
+        </Link>
         <div className={styles.menu}>
           <ul>
-            <li>INICIO</li>
-            <li>SERVICIOS</li>
-            <li>SOBRE NOSOTROS</li>
-            <li>PROYECTOS</li>
-            <li>CONTACTANOS</li>
+            <Link
+              className={styles.link}
+              href={'#home'}
+              onClick={() => setShowMenu(false)}
+            >
+              <li>INICIO</li>
+            </Link>
+            <Link
+              className={styles.link}
+              href={'#services'}
+              onClick={() => setShowMenu(false)}
+            >
+              <li>SERVICIOS</li>
+            </Link>
+            <Link
+              className={styles.link}
+              href={'#aboutUs'}
+              onClick={() => setShowMenu(false)}
+            >
+              <li>SOBRE NOSOTROS</li>
+            </Link>
+            <Link
+              className={styles.link}
+              href={'#projects'}
+              onClick={() => setShowMenu(false)}
+            >
+              <li>PROYECTOS</li>
+            </Link>
+            <Link
+              className={styles.link}
+              href={'#contactUs'}
+              onClick={() => setShowMenu(false)}
+            >
+              <li>CONTACTANOS</li>
+            </Link>
           </ul>
           <div className={styles.button}>
-            <div className={styles.info}>
-              <span>
-                <Phone width='18px' height='18px' color='white' />
-              </span>
-              <p>+54 11 3930-9554</p>
-            </div>
-            <div className={styles.info}>
-              <span>
-                <Email width='18px' height='18px' color='white' />
-              </span>
-              <p>consultas@grup...</p>
-            </div>
-            <button className={styles.button_contact}>
-              obtener cotización
-              <Arrow width='15px' height='15px' />
-            </button>
+            <Link
+              href='https://wa.me/+5491139309554'
+              target='_blank'
+              onClick={() => setShowMenu(false)}
+            >
+              <div className={styles.info}>
+                <span>
+                  <Phone width='18px' height='18px' color='white' />
+                </span>
+                <p>+54 11 3930-9554</p>
+              </div>
+            </Link>
+            <Link
+              href='mailto:consultas@grupozurita.com.ar'
+              target='_blank'
+              onClick={() => setShowMenu(false)}
+            >
+              <div className={styles.info}>
+                <span>
+                  <Email width='18px' height='18px' color='white' />
+                </span>
+                <p>consultas@grup...</p>
+              </div>
+            </Link>
+            <Link
+              href={`https://wa.me/+541139309554?text=${mensaje}`}
+              target='_blank'
+              className={styles.link_button}
+              onClick={() => setShowMenu(false)}
+            >
+              <button className={styles.button_contact}>
+                obtener cotización
+                <Arrow width='15px' height='15px' />
+              </button>
+            </Link>
           </div>
         </div>
         <div className={styles.hamburguer}>
