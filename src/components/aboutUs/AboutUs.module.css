@@ -8,6 +8,7 @@
   align-items: center;
   column-gap: 150px;
   padding: 130px 0px;
+  overflow-x: hidden;
 }
 
 .info_text {
