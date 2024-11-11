@@ -23,8 +23,8 @@ const NavBar = () => {
     }
   }, [])
   return (
-    <nav className={styles.containerNav}>
-      <div
+    <header className={styles.containerNav}>
+      <nav
         className={`${styles.nav} ${showMenu ? styles.show : ''}`}
         ref={navRef}
       >
@@ -123,8 +123,8 @@ const NavBar = () => {
             <Hamburguer color='white' width='32px' height='32px' />
           </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
 

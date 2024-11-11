@@ -37,7 +37,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={styles.container} id='home'>
+    <section className={styles.container} id='home'>
       {images.map((image, index) => (
         <div
           key={index}
@@ -50,7 +50,7 @@ const Header = () => {
       <div className={styles.overlay}>
         <div className={styles.content}></div>
       </div>
-    </header>
+    </section>
   )
 }
 
