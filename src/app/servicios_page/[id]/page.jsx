@@ -9,10 +9,16 @@ const Servicios_page = () => {
   console.log(proyecto)
   return (
     <div className={styles.container}>
-      <div className={styles.background}>
-        <span>servicio</span>
-        <h2>{proyecto.nombre}</h2>
-        <p>{proyecto.descripcion}</p>
+      <div
+        className={styles.background}
+        style={{ backgroundImage: `url(${proyecto.backgroundImg_page.src})` }}
+      >
+        <div className={styles.info}>
+          <span>servicio</span>
+          <h2>{proyecto.nombre}</h2>
+          <div className={styles.line}></div>
+          {/* <p>{proyecto.descripcion}</p> */}
+        </div>
       </div>
       <div className={styles.carrucel}></div>
     </div>

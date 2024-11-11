@@ -7,6 +7,7 @@ import { useRef, useEffect } from 'react'
 import ArrowLeftCarrucel from '@/assets/icon/ArrowLeftCarrucel'
 import ArrowRigthCarrucel from '@/assets/icon/ArrowRigthCarrucel'
 import { animateProyectos } from '../Animates/Animates'
+import touch_gif from '@/assets/image/gif.gif'
 
 const Proyectos = () => {
   const containerProyectos = useRef(null)
@@ -17,6 +18,7 @@ const Proyectos = () => {
   const cardsRef = useRef([])
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
+  const touchAnimationRef = useRef(null)
 
   useEffect(() => {
     animateProyectos(
@@ -26,7 +28,8 @@ const Proyectos = () => {
       buttonRef.current,
       cardsRef.current,
       buttonLeftRef.current,
-      buttonRightRef.current
+      buttonRightRef.current,
+      touchAnimationRef.current
     )
   }, [])
 
@@ -51,6 +54,9 @@ const Proyectos = () => {
         </div>
       </div>
       <div className={styles.container_carrucel}>
+        <div className={styles.touchAnimation} ref={touchAnimationRef}>
+          <Image src={touch_gif} alt='imagen gif' width={500} height={500} />
+        </div>
         <div className={styles.carrucel_projects} ref={carrucelRef}>
           {dataProyectos.map((proyecto, index) => (
             <div

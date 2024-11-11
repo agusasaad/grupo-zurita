@@ -125,7 +125,8 @@ export const animateProyectos = (
   buttonRef,
   cardsRef,
   buttonLeftRef,
-  buttonRightRef
+  buttonRightRef,
+  touchAnimationRef
 ) => {
   gsap.registerPlugin(ScrollTrigger)
   const tl = gsap.timeline({
@@ -200,6 +201,28 @@ export const animateProyectos = (
       x: 0,
       duration: 0.4,
       ease: 'power3',
+    },
+    '<'
+  )
+
+  tl.fromTo(
+    touchAnimationRef,
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power1',
+      onComplete: () => {
+        gsap.to(touchAnimationRef, {
+          display: 'none',
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power1',
+          delay: 2,
+        })
+      },
     },
     '<'
   )

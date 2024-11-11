@@ -76,6 +76,25 @@
   position: relative;
 }
 
+.touchAnimation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  will-change: transform, opacity;
+}
+
+.touchAnimation img {
+  width: 90%;
+  height: auto;
+}
+
 .containerButtonLeft {
   position: absolute;
   left: 0;
@@ -151,6 +170,17 @@
   .containerButtonLeft,
   .containerButtonRigth {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .touchAnimation {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.603);
+  }
+
+  .touchAnimation img {
+    opacity: 50%;
   }
 }
 

@@ -3,6 +3,9 @@ import image_one from '@/assets/image/cards_image/aberturas.png'
 import image_two from '@/assets/image/cards_image/vidrios.png'
 import image_three from '@/assets/image/cards_image/cerramientos.png'
 import image_four from '@/assets/image/cards_image/complementarios.png'
+import background_page_one from '@/assets/image/cards_image/aberturas_background.jpg'
+import background_page_two from '@/assets/image/cards_image/vidrios_background.jpg'
+import background_page_three from '@/assets/image/cards_image/estructuras_aluminio_background.webp'
 import Glass from '@/assets/icon/Glass'
 import Complemetarios from '@/assets/icon/Complemetarios'
 import Aluminio from '@/assets/icon/Aluminio'
@@ -15,6 +18,7 @@ export const servicios = [
     descripcion:
       'Aberturas de PVC duraderas con excelente aislamiento térmico.',
     backgroundImg: image_one,
+    backgroundImg_page: background_page_one,
   },
   {
     id: '2',
@@ -23,6 +27,7 @@ export const servicios = [
     descripcion:
       'Soluciones en vidrio de alta calidad para un diseño moderno y seguro.',
     backgroundImg: image_two,
+    backgroundImg_page: background_page_two,
   },
   {
     id: '3',
@@ -31,6 +36,7 @@ export const servicios = [
     descripcion:
       'Cerramientos resistentes y estéticos en aluminio para todos tus espacios.',
     backgroundImg: image_three,
+    backgroundImg_page: background_page_three,
   },
   {
     id: '4',
@@ -38,5 +44,6 @@ export const servicios = [
     nombre: 'Complementarios',
     descripcion: 'Estructuras en acero, hierro y espejos de alta calidad.',
     backgroundImg: image_four,
+    backgroundImg_page: background_page_one,
   },
 ]

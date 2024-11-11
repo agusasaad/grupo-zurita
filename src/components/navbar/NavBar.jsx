@@ -9,6 +9,7 @@ import Arrow from '@/assets/icon/Arrow'
 import Phone from '@/assets/icon/Phone'
 import Email from '@/assets/icon/Email'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -16,6 +17,7 @@ const NavBar = () => {
   const mensaje = encodeURIComponent(
     'Hola, estoy interesado en recibir una cotización para aberturas de PVC y otros servicios relacionados. ¿Podrían enviarme más detalles y precios?'
   )
+  const params = usePathname()
 
   useEffect(() => {
     if (window.innerWidth > 1200) {
@@ -46,35 +48,35 @@ const NavBar = () => {
           <ul>
             <Link
               className={styles.link}
-              href={'#home'}
+              href={params === '/' ? '#home' : '/#home'}
               onClick={() => setShowMenu(false)}
             >
               <li>INICIO</li>
             </Link>
             <Link
               className={styles.link}
-              href={'#services'}
+              href={params === '/' ? '#services' : '/#services'}
               onClick={() => setShowMenu(false)}
             >
               <li>SERVICIOS</li>
             </Link>
             <Link
               className={styles.link}
-              href={'#aboutUs'}
+              href={params === '/' ? '#aboutUs' : '/#aboutUs'}
               onClick={() => setShowMenu(false)}
             >
               <li>SOBRE NOSOTROS</li>
             </Link>
             <Link
               className={styles.link}
-              href={'#projects'}
+              href={params === '/' ? '#projects' : '/#projects'}
               onClick={() => setShowMenu(false)}
             >
               <li>PROYECTOS</li>
             </Link>
             <Link
               className={styles.link}
-              href={'#contactUs'}
+              href={params === '/' ? '#contactUs' : '/#contactUs'}
               onClick={() => setShowMenu(false)}
             >
               <li>CONTACTANOS</li>
