@@ -9,6 +9,7 @@ import Aluminio from '@/assets/icon/Aluminio'
 
 export const servicios = [
   {
+    id: '1',
     icon: <Window width='60px' height='50px' />,
     nombre: 'Aberturas de PVC',
     descripcion:
@@ -16,6 +17,7 @@ export const servicios = [
     backgroundImg: image_one,
   },
   {
+    id: '2',
     icon: <Glass width='60px' height='60px' />,
     nombre: 'Vidrios',
     descripcion:
@@ -23,6 +25,7 @@ export const servicios = [
     backgroundImg: image_two,
   },
   {
+    id: '3',
     icon: <Aluminio width='60px' height='60px' />,
     nombre: 'Cerramientos de Aluminio',
     descripcion:
@@ -30,6 +33,7 @@ export const servicios = [
     backgroundImg: image_three,
   },
   {
+    id: '4',
     icon: <Complemetarios width='60px' height='60px' />,
     nombre: 'Complementarios',
     descripcion: 'Estructuras en acero, hierro y espejos de alta calidad.',

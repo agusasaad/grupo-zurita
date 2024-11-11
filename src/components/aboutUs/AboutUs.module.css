@@ -25,6 +25,7 @@
   text-transform: uppercase;
   letter-spacing: 2.3px;
   color: #657078;
+  will-change: transform, opacity;
 }
 
 .info_text h2 {
@@ -38,6 +39,7 @@
   text-wrap: balance;
   text-align: left;
   margin-bottom: 10px;
+  will-change: transform, opacity;
 }
 .info_text p {
   text-align: left;
@@ -46,10 +48,12 @@
   font-size: 16px;
   line-height: 28px;
   margin-bottom: 10px;
+  will-change: transform, opacity;
 }
 
 .info_text .button_show_more {
   display: none;
+  will-change: transform, opacity;
 }
 
 .image_container {
@@ -57,6 +61,13 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  will-change: transform, opacity;
+}
+
+.text_container {
+  position: absolute;
+  left: -100px;
+  will-change: transform, opacity;
 }
 
 @media (max-width: 1400px) {
@@ -64,6 +75,10 @@
     flex-direction: column;
     row-gap: 20px;
     padding: 70px 0px;
+  }
+
+  .text_container {
+    display: none;
   }
 
   .info_text {
@@ -77,7 +92,16 @@
 
   .image_container .image {
     width: 100%;
-    object-position: top !important;
+    object-position: top;
+  }
+
+  .text_container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
   }
 }
 

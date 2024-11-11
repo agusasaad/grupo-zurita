@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import styles from './Footer.module.css'
 import logo from '@/assets/image/LogoZurita.png'
@@ -9,13 +10,34 @@ import Whatsapp from '@/assets/icon/Whatsapp'
 import Mobile from '@/assets/icon/Mobile'
 import Location from '@/assets/icon/Location'
 import Clock from '@/assets/icon/Clock'
+import { useEffect, useRef } from 'react'
+import { animateFooter } from '../Animates/Animates'
 
 const Footer = () => {
+  const containerFooter = useRef(null)
+  const logoRef = useRef(null)
+  const listNavigationRef = useRef(null)
+  const listInfoRef = useRef(null)
+  const listSocialRef = useRef(null)
+  const lineRef = useRef(null)
+  const copyrightRef = useRef(null)
+
+  useEffect(() => {
+    animateFooter(
+      containerFooter.current,
+      logoRef.current,
+      listInfoRef.current,
+      listNavigationRef.current,
+      listSocialRef.current,
+      lineRef.current,
+      copyrightRef.current
+    )
+  })
   return (
-    <footer className={styles.container}>
+    <footer className={styles.container} ref={containerFooter}>
       <div className={styles.full_content}>
         <div className={styles.content_list}>
-          <div className={styles.logo}>
+          <div className={styles.logo} ref={logoRef}>
             <Image
               src={logo}
               alt='Logo'
@@ -27,7 +49,7 @@ const Footer = () => {
               Grupo<strong>Zurita.</strong>
             </span>
           </div>
-          <div className={styles.list}>
+          <div className={styles.list} ref={listInfoRef}>
             <h5>Información</h5>
             <ul>
               <Link href='https://wa.me/+5491139309554' target='_blank'>
@@ -57,7 +79,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className={styles.navigation}>
+          <div className={styles.navigation} ref={listNavigationRef}>
             <h5>Navegación</h5>
             <ul>
               <Link href='#home'>
@@ -77,7 +99,7 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <div className={styles.social}>
+          <div className={styles.social} ref={listSocialRef}>
             <h5>Redes Sociales</h5>
             <div className={styles.social_list}>
               <Link
@@ -104,8 +126,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className={styles.divider}></div>
-        <div className={styles.copyright}>
+        <div className={styles.divider} ref={lineRef}></div>
+        <div className={styles.copyright} ref={copyrightRef}>
           <p>© 2021, Todos los derechos reservados Grupo Zurita.</p>
         </div>
       </div>

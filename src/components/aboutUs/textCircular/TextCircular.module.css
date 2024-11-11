@@ -1,8 +1,9 @@
 .container {
-  position: absolute;
-  top: 150;
-  left: -100px;
-  z-index: 2;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle {
@@ -30,15 +31,17 @@
   left: 50%;
   font-size: 12px;
   font-weight: 700;
-  color: grey;
+  color: rgb(58, 58, 58);
   padding: 2px;
 }
 
 .profileImage {
+  width: 100px;
   position: absolute;
-  width: 100px !important;
-  top: 45px;
-  left: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin-reverse 50s linear infinite;
 }
 
 @keyframes spin {
@@ -50,17 +53,41 @@
   }
 }
 
+@keyframes spin-reverse {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
 @media (max-width: 1400px) {
   .container {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 2;
+    height: min-content;
   }
 }
 
 @media (max-width: 700px) {
   .container {
-    display: none;
+    border: 1px solid green;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .letter {
+    transform-origin: 0 75px !important;
+    font-size: 10px;
+  }
+
+  .profileImage {
+    width: 70px;
   }
 }

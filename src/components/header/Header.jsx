@@ -47,26 +47,11 @@ const Header = () => {
           style={{ backgroundImage: `url(${image.src})` }}
         />
       ))}
-      <div className={styles.overlay}></div>
+      <div className={styles.overlay}>
+        <div className={styles.content}></div>
+      </div>
     </header>
   )
 }
 
 export default Header
-
-{
-  /* <div className={styles.content}>
-          <h1>Construcción & Aberturas de Calidad</h1>
-          <p>
-            Acompañando el crecimiento exponencial de la industria de la
-            construcción.
-          </p>
-          <div className={styles.button_container}>
-            <button className={styles.services}>NUESTROS SERVICIOS</button>
-            <button className={styles.cotization}>
-              obtener cotización
-              <Arrow width='15px' height='15px' />
-            </button>
-          </div>
-        </div> */
-}

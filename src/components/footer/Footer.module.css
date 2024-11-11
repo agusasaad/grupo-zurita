@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   background-image: url('https://preview.codeless.co/bygge/default/wp-content/uploads/2021/06/test-bg.png');
+  overflow-y: hidden;
 }
 
 .divider {
