@@ -14,7 +14,7 @@ export const metadata = {
     title: 'Grupo Zurita - Calidad y Confianza en Construcción desde 1984',
     description:
       'Desde 1984, Grupo Zurita ofrece soluciones integrales en construcción: aberturas de PVC, cerramientos de aluminio, vidrio y estructuras complementarias de alta calidad en Buenos Aires.',
-    images: '/image.jpeg', // Asegúrate de que esta imagen esté disponible en el directorio público
+    images: '/image.jpg',
     url: 'https://grupo-zurita.vercel.app/',
     type: 'website',
     site_name: 'Grupo Zurita',
@@ -27,7 +27,7 @@ export const metadata = {
     title: 'Grupo Zurita - Soluciones en Aberturas y Construcción',
     description:
       'Desde 1984, calidad y confianza en cada proyecto de construcción.',
-    images: '/image.jpeg',
+    images: '/image.jpg',
   },
 }
 
