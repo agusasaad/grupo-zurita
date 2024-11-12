@@ -6,6 +6,8 @@ import image_four from '@/assets/image/cards_image/complementarios.png'
 import background_page_one from '@/assets/image/cards_image/aberturas_background.jpg'
 import background_page_two from '@/assets/image/cards_image/vidrios_background.jpg'
 import background_page_three from '@/assets/image/cards_image/estructuras.jpg'
+import background_page_four from '@/assets/image/cards_image/complementarios_background.jpg'
+
 import Glass from '@/assets/icon/Glass'
 import Complemetarios from '@/assets/icon/Complemetarios'
 import Aluminio from '@/assets/icon/Aluminio'
@@ -125,7 +127,7 @@ export const servicios = [
     nombre: 'Complementarios',
     descripcion: 'Estructuras en acero, hierro y espejos de alta calidad.',
     backgroundImg: image_four,
-    backgroundImg_page: background_page_one,
+    backgroundImg_page: background_page_four,
     image_array: [
       complemetarios,
       complemetarios_1,

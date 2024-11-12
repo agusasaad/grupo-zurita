@@ -8,6 +8,7 @@ import ArrowLeftCarrucel from '@/assets/icon/ArrowLeftCarrucel'
 import ArrowRigthCarrucel from '@/assets/icon/ArrowRigthCarrucel'
 import { animateProyectos } from '../Animates/Animates'
 import touch_gif from '@/assets/image/gif.gif'
+import Link from 'next/link'
 
 const Proyectos = () => {
   const containerProyectos = useRef(null)
@@ -47,10 +48,12 @@ const Proyectos = () => {
         <span ref={subtitleRef}>PROYECTOS</span>
         <div className={styles.title_button}>
           <h2 ref={titleRef}>Obras Recientes</h2>
-          <button ref={buttonRef}>
-            Ver Todos
-            <Arrow color='var(--blood-orange)' width='16px' height='16px' />
-          </button>
+          <Link href={'/servicios_page/1'}>
+            <button ref={buttonRef}>
+              Ver Todos
+              <Arrow color='var(--blood-orange)' width='16px' height='16px' />
+            </button>
+          </Link>
         </div>
       </div>
       <div className={styles.container_carrucel}>

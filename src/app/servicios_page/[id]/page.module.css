@@ -7,6 +7,7 @@
   align-items: center;
   background: black;
   color: white;
+  overflow-x: hidden;
 }
 
 .background {
@@ -17,11 +18,12 @@
 }
 
 .info {
-  height: 500px;
+  height: 450px;
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   padding: 50px;
   gap: 10px;
   background: #000000ab;
@@ -68,13 +70,30 @@
   will-change: transform, opacity;
 }
 
+.background .info .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+}
+
+.background .info .buttons button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.425);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 50%;
+}
+
 .carrucel {
   width: 100%;
   height: auto;
   background-image: url('./../../../assets/image/bg-2.webp');
   background-size: cover;
   background-position: center;
-  padding: 100px 0px;
+  padding: 30px 0px;
 }
 
 .description {
@@ -155,6 +174,12 @@
   .containerButtonLeft,
   .containerButtonRigth {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    display: none !important;
   }
 }
 

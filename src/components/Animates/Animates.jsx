@@ -326,7 +326,6 @@ export const animateServiciosPage = (
   buttonRightRef
 ) => {
   gsap.registerPlugin(ScrollTrigger)
-
   gsap.fromTo(
     [subtitleRef, titleRef, lineRef],
     {

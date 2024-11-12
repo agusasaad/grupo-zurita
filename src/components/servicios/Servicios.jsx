@@ -62,10 +62,12 @@ const Servicios = () => {
           construir tus ideas.
         </p>
         <div className={styles.button} ref={buttonRef}>
-          <button>
-            Ver Más
-            <Arrow color='var(--blood-orange)' width='16px' height='16px' />
-          </button>
+          <Link href={'/servicios_page/1'}>
+            <button>
+              Ver Más
+              <Arrow color='var(--blood-orange)' width='16px' height='16px' />
+            </button>
+          </Link>
         </div>
       </div>
     </div>
