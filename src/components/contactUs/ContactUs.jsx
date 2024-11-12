@@ -4,8 +4,9 @@ import Link from 'next/link'
 import Whatsapp from '@/assets/icon/Whatsapp'
 import Instagram from '@/assets/icon/Instagram'
 import Facebook from '@/assets/icon/Facebook'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { animateContactUs } from '../Animates/Animates'
+import emailjs from 'emailjs-com'
 
 const ContactUs = () => {
   const containerContact = useRef(null)
@@ -14,8 +15,12 @@ const ContactUs = () => {
   const titleRef = useRef(null)
   const descriptionRef = useRef(null)
   const buttonRef = useRef(null)
+  const [showSpinner, setShowSpinner] = useState(false)
 
   useEffect(() => {
+    // Inicia EmailJS con tu User ID
+    emailjs.init('AvKV6TnFtizcS_CD1') // Asegúrate de reemplazar 'tu_user_id_aqui' con tu verdadero User ID
+
     animateContactUs(
       containerContact.current,
       formContainerRef.current,
@@ -26,16 +31,65 @@ const ContactUs = () => {
     )
   }, [])
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    setShowSpinner(true)
+
+    // Configurar los ID de tu servicio y template de EmailJS
+    const serviceID = 'default_service'
+    const templateID = 'template_17ugrij'
+
+    // Enviar formulario usando emailjs
+    emailjs.sendForm(serviceID, templateID, e.target).then(
+      () => {
+        setShowSpinner(false) // Restaurar el valor del botón
+        alert('¡Formulario enviado con exito!') // Notificación de éxito
+      },
+      (err) => {
+        setShowSpinner(false) // Restaurar el valor del botón
+        alert('Failed to send. Error: ' + JSON.stringify(err)) // Manejo de error
+      }
+    )
+
+    // Limpiar formulario después de enviarlo
+    e.target.reset()
+  }
+
   return (
     <div className={styles.container} id='contactUs' ref={containerContact}>
       <div className={styles.form_container} ref={formContainerRef}>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit} id='form'>
           <div className={styles.inputs}>
-            <input type='text' placeholder='Nombre y Apellido' />
-            <input type='text' placeholder='Correo electronico' />
-            <input type='text' placeholder='Teléfono' />
-            <input type='text' placeholder='Localidad' />
-            <select defaultValue=''>
+            <input
+              type='text'
+              name='name'
+              id='name'
+              placeholder='Nombre y Apellido'
+              required
+            />
+            <input
+              type='email'
+              name='email'
+              id='email'
+              required
+              placeholder='Correo Electronico'
+            />
+            <input
+              type='text'
+              name='telefono'
+              id='telefono'
+              required
+              placeholder='Telefono'
+            />
+            <input
+              type='text'
+              name='localidad'
+              id='localidad'
+              required
+              placeholder='Localidad'
+            />
+            <select defaultValue='' name='servicio' id='servicio' required>
               <option value='' disabled>
                 Seleccione un servicio
               </option>
@@ -47,8 +101,15 @@ const ContactUs = () => {
               <option value='Complementarios'>Complementarios</option>
             </select>
 
-            <textarea placeholder='Descripción del proyecto'></textarea>
-            <button type='submit'>Enviar</button>
+            <textarea
+              name='descripcion'
+              id='descripcion'
+              placeholder='Descripción del proyecto'
+              required
+            ></textarea>
+            <button type='submit' id='button' value='Send Email'>
+              {showSpinner ? <span className={styles.loader}></span> : 'Enviar'}
+            </button>
           </div>
         </form>
       </div>
