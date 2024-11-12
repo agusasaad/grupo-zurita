@@ -12,8 +12,11 @@ import Location from '@/assets/icon/Location'
 import Clock from '@/assets/icon/Clock'
 import { useEffect, useRef } from 'react'
 import { animateFooter } from '../Animates/Animates'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
+  const params = usePathname()
+
   const containerFooter = useRef(null)
   const logoRef = useRef(null)
   const listNavigationRef = useRef(null)
@@ -82,19 +85,19 @@ const Footer = () => {
           <div className={styles.navigation} ref={listNavigationRef}>
             <h5>Navegación</h5>
             <ul>
-              <Link href='#home'>
+              <Link href={params === '/' ? '#home' : '/#home'}>
                 <li>Inicio</li>
               </Link>
-              <Link href='#services'>
+              <Link href={params === '/' ? '#services' : '/#services'}>
                 <li>Servicios</li>
               </Link>
-              <Link href='#aboutUs'>
+              <Link href={params === '/' ? '#aboutUs' : '/#aboutUs'}>
                 <li>Sobre Nosotros</li>
               </Link>
-              <Link href='#projects'>
+              <Link href={params === '/' ? '#projects' : '/#projects'}>
                 <li>Proyectos</li>
               </Link>
-              <Link href='#contactUs'>
+              <Link href={params === '/' ? '#contactUs' : '/#contactUs'}>
                 <li>Contacto</li>
               </Link>
             </ul>

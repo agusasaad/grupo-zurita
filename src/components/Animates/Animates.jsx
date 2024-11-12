@@ -309,9 +309,76 @@ export const animateFooter = (
       stagger: 0.1,
       scrollTrigger: {
         trigger: containerFooter,
-        start: 'top 50%',
+        start: 'top 70%',
         end: 'bottom 100%',
+        once: true,
       },
+    }
+  )
+}
+
+export const animateServiciosPage = (
+  subtitleRef,
+  titleRef,
+  lineRef,
+  cardsRef,
+  buttonLeftRef,
+  buttonRightRef
+) => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  gsap.fromTo(
+    [subtitleRef, titleRef, lineRef],
+    {
+      opacity: 0,
+      x: -100,
+    },
+    {
+      opacity: 1,
+      x: 0,
+      duration: 0.6,
+      ease: 'power1',
+      stagger: 0.1,
+      delay: 0.2,
+    }
+  )
+
+  gsap.fromTo(
+    cardsRef,
+    { opacity: 0, y: 100 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: 'power1',
+      stagger: 0.2,
+      delay: 0.4,
+    }
+  )
+
+  gsap.fromTo(
+    buttonLeftRef,
+    {
+      x: -100,
+    },
+    {
+      x: 0,
+      duration: 0.4,
+      ease: 'power3',
+      delay: 0.6,
+    }
+  )
+
+  gsap.fromTo(
+    buttonRightRef,
+    {
+      x: 100,
+    },
+    {
+      x: 0,
+      duration: 0.4,
+      ease: 'power3',
+      delay: 0.6,
     }
   )
 }
