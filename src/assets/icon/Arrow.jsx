@@ -1,11 +1,16 @@
 import React from 'react'
 
-const Arrow = ({ width = '24px', height = '24px', color = 'black' }) => {
+const Arrow = ({
+  width = '24px',
+  height = '24px',
+  color = 'black',
+  strokeWidth = '0',
+}) => {
   return (
     <svg
       stroke='currentColor'
       fill={color}
-      strokeWidth={0}
+      strokeWidth={strokeWidth}
       viewBox='0 0 24 24'
       height={height}
       width={width}

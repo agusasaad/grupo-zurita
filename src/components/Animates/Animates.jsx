@@ -2,6 +2,44 @@
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
+export const animateInicio = (
+  subtitleRef,
+  titleRef,
+  titleMobileRef,
+  buttonRef
+) => {
+  if (window.innerWidth > 600) {
+    gsap.fromTo(
+      [subtitleRef, titleRef, buttonRef],
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'power3',
+        stagger: 0.2,
+      }
+    )
+  } else {
+    gsap.fromTo(
+      [subtitleRef, titleRef, titleMobileRef, buttonRef],
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3',
+        stagger: 0.2,
+      }
+    )
+  }
+}
 export const animateServices = (
   containerServices,
   cardContainerRef,
