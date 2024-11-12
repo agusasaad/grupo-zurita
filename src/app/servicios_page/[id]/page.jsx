@@ -60,14 +60,14 @@ const Servicios_page = () => {
             <div className={styles.line} ref={lineRef}></div>
           </div>
           <div className={styles.buttons}>
-            <Link href={`/servicios_page/${prevPage}`}>
+            <Link href={`/servicios_page/${prevPage}`} className={styles.left}>
               <button>
-                <ArrowLeftCarrucel color='white' />
+                <ArrowLeftCarrucel color='white' width='20px' height='20px' />
               </button>
             </Link>
-            <Link href={`/servicios_page/${nextPage}`}>
+            <Link href={`/servicios_page/${nextPage}`} className={styles.right}>
               <button>
-                <ArrowRigthCarrucel color='white' />
+                <ArrowRigthCarrucel color='white' width='20px' height='20px' />
               </button>
             </Link>
           </div>

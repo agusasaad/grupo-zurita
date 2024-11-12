@@ -1,3 +1,4 @@
+import styles from './../../app/servicios_page/[id]/page.module.css'
 const ArrowRigthCarrucel = ({
   width = '24px',
   height = '24px',
@@ -5,6 +6,7 @@ const ArrowRigthCarrucel = ({
 }) => {
   return (
     <svg
+      className={styles.svg}
       stroke='currentColor'
       fill={color}
       strokeWidth={0}

@@ -178,7 +178,7 @@
 }
 
 @media (max-width: 768px) {
-  .buttons {
+  .left {
     display: none !important;
   }
 }
@@ -207,5 +207,22 @@
   .card img {
     width: 300px !important;
     height: 300px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .left {
+    display: none !important;
+  }
+
+  .background .info h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    line-height: normal;
+  }
+
+  .svg {
+    width: 10px;
+    height: 10px;
   }
 }
