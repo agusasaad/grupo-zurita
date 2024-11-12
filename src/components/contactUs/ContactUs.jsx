@@ -6,7 +6,7 @@ import Instagram from '@/assets/icon/Instagram'
 import Facebook from '@/assets/icon/Facebook'
 import { useEffect, useRef, useState } from 'react'
 import { animateContactUs } from '../Animates/Animates'
-import emailjs from 'emailjs-com'
+// import emailjs from 'emailjs-com'
 
 const ContactUs = () => {
   const containerContact = useRef(null)
@@ -19,7 +19,7 @@ const ContactUs = () => {
 
   useEffect(() => {
     // Inicia EmailJS con tu User ID
-    emailjs.init('AvKV6TnFtizcS_CD1') // Asegúrate de reemplazar 'tu_user_id_aqui' con tu verdadero User ID
+    // emailjs.init('AvKV6TnFtizcS_CD1')
 
     animateContactUs(
       containerContact.current,
@@ -34,26 +34,26 @@ const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    setShowSpinner(true)
+    // setShowSpinner(true)
 
-    // Configurar los ID de tu servicio y template de EmailJS
-    const serviceID = 'default_service'
-    const templateID = 'template_17ugrij'
+    // // Configurar los ID de tu servicio y template de EmailJS
+    // const serviceID = 'default_service'
+    // const templateID = 'template_17ugrij'
 
-    // Enviar formulario usando emailjs
-    emailjs.sendForm(serviceID, templateID, e.target).then(
-      () => {
-        setShowSpinner(false) // Restaurar el valor del botón
-        alert('¡Formulario enviado con exito!') // Notificación de éxito
-      },
-      (err) => {
-        setShowSpinner(false) // Restaurar el valor del botón
-        alert('Failed to send. Error: ' + JSON.stringify(err)) // Manejo de error
-      }
-    )
+    // // Enviar formulario usando emailjs
+    // emailjs.sendForm(serviceID, templateID, e.target).then(
+    //   () => {
+    //     setShowSpinner(false) // Restaurar el valor del botón
+    //     alert('¡Formulario enviado con exito!') // Notificación de éxito
+    //   },
+    //   (err) => {
+    //     setShowSpinner(false) // Restaurar el valor del botón
+    //     alert('Failed to send. Error: ' + JSON.stringify(err)) // Manejo de error
+    //   }
+    // )
 
-    // Limpiar formulario después de enviarlo
-    e.target.reset()
+    // // Limpiar formulario después de enviarlo
+    // e.target.reset()
   }
 
   return (
