@@ -35,7 +35,7 @@ const Footer = () => {
       lineRef.current,
       copyrightRef.current
     )
-  })
+  }, [])
   return (
     <footer className={styles.container} ref={containerFooter}>
       <div className={styles.full_content}>
