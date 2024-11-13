@@ -167,6 +167,7 @@ export const animateProyectos = (
   touchAnimationRef
 ) => {
   gsap.registerPlugin(ScrollTrigger)
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: containerProyectos,
@@ -177,10 +178,7 @@ export const animateProyectos = (
 
   tl.fromTo(
     [subtitleRef, titleRef],
-    {
-      opacity: 0,
-      x: -100,
-    },
+    { opacity: 0, x: -100 },
     {
       opacity: 1,
       x: 0,
@@ -192,10 +190,7 @@ export const animateProyectos = (
     .add(
       gsap.fromTo(
         buttonRef,
-        {
-          opacity: 0,
-          x: 100,
-        },
+        { opacity: 0, x: 100 },
         {
           opacity: 1,
           x: 0,
@@ -219,12 +214,32 @@ export const animateProyectos = (
       ),
       0.3
     )
+    .add(
+      gsap.fromTo(
+        touchAnimationRef,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power1',
+          onComplete: () => {
+            gsap.to(touchAnimationRef, {
+              display: 'none',
+              opacity: 0,
+              duration: 0.5,
+              ease: 'power1',
+              delay: 0.5,
+            })
+          },
+        }
+      ),
+      '<'
+    )
 
+  // Animación para los botones izquierdo y derecho
   tl.fromTo(
     buttonLeftRef,
-    {
-      x: -100,
-    },
+    { x: -100 },
     {
       x: 0,
       duration: 0.4,
@@ -232,37 +247,13 @@ export const animateProyectos = (
     }
   ).fromTo(
     buttonRightRef,
-    {
-      x: 100,
-    },
+    { x: 100 },
     {
       x: 0,
       duration: 0.4,
       ease: 'power3',
     },
-    '<'
-  )
-
-  tl.fromTo(
-    touchAnimationRef,
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      duration: 0.8,
-      ease: 'power1',
-      onComplete: () => {
-        gsap.to(touchAnimationRef, {
-          display: 'none',
-          opacity: 0,
-          duration: 0.5,
-          ease: 'power1',
-          delay: 2,
-        })
-      },
-    },
-    '<'
+    '<' // Comienza al mismo tiempo que la animación del botón izquierdo
   )
 }
 
