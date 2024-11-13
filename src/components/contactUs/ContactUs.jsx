@@ -21,7 +21,6 @@ const ContactUs = () => {
     emailjs.init('AvKV6TnFtizcS_CD1')
 
     animateContactUs(
-      containerContact.current,
       formContainerRef.current,
       subtitleRef.current,
       titleRef.current,

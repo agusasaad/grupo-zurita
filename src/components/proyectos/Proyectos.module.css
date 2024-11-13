@@ -188,6 +188,7 @@
 @media (max-width: 700px) {
   .container {
     padding: 40px 0px;
+    min-height: 483px;
   }
   .info_text .title_button h2 {
     font-weight: 700;

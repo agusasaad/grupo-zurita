@@ -2,6 +2,8 @@
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
+const start = 'top 50%'
+const startMobile = 'top 80%'
 export const animateInicio = (
   subtitleRef,
   titleRef,
@@ -63,7 +65,7 @@ export const animateServices = (
       ease: 'power3',
       scrollTrigger: {
         trigger: containerServices,
-        start: 'top 50%',
+        start: () => (window.innerWidth > 600 ? start : startMobile),
         end: 'bottom 100%',
       },
     }
@@ -83,7 +85,7 @@ export const animateServices = (
       stagger: 0.1,
       scrollTrigger: {
         trigger: containerServices,
-        start: 'top 50%',
+        start: () => (window.innerWidth > 600 ? start : startMobile),
         end: 'bottom 100%',
       },
     }
@@ -103,7 +105,7 @@ export const animateAboutUs = (
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: containerAboutRef,
-      start: 'top 50%',
+      start: () => (window.innerWidth > 600 ? start : startMobile),
       end: 'bottom 100%',
     },
   })
@@ -171,7 +173,7 @@ export const animateProyectos = (
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: containerProyectos,
-      start: 'top 50%',
+      start: () => (window.innerWidth > 600 ? start : startMobile),
       end: 'bottom 100%',
     },
   })
@@ -258,8 +260,7 @@ export const animateProyectos = (
 }
 
 export const animateContactUs = (
-  containerServices,
-  cardContainerRef,
+  formContainerRef,
   subtitleRef,
   titleRef,
   descriptionRef,
@@ -268,7 +269,7 @@ export const animateContactUs = (
   gsap.registerPlugin(ScrollTrigger)
 
   gsap.fromTo(
-    cardContainerRef,
+    formContainerRef,
     {
       opacity: 0,
       scale: 0,
@@ -279,8 +280,8 @@ export const animateContactUs = (
       duration: 0.9,
       ease: 'power3',
       scrollTrigger: {
-        trigger: containerServices,
-        start: 'top 50%',
+        trigger: '#contactUs',
+        start: () => (window.innerWidth > 600 ? start : startMobile),
         end: 'bottom 100%',
       },
     }
@@ -299,8 +300,8 @@ export const animateContactUs = (
       ease: 'power1',
       stagger: 0.1,
       scrollTrigger: {
-        trigger: containerServices,
-        start: 'top 50%',
+        trigger: '#contactUs',
+        start: () => (window.innerWidth > 600 ? start : startMobile),
         end: 'bottom 100%',
       },
     }
@@ -338,7 +339,7 @@ export const animateFooter = (
       stagger: 0.1,
       scrollTrigger: {
         trigger: containerFooter,
-        start: 'top 70%',
+        start: () => (window.innerWidth > 600 ? start : startMobile),
         end: 'bottom 100%',
         once: true,
       },
