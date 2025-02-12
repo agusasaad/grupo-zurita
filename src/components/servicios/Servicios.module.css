@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  background-image: url('./../../assets/image/bg-2.webp');
+  background-image: url("./../../assets/image/bg-2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -192,7 +192,40 @@
   gap: 5px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1300px) {
+  .container {
+    padding: 80px 0px;
+    column-gap: 0px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+
+  .info_text {
+    max-width: 500px;
+  }
+
+  .card_container {
+    max-width: 600px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: calc(50% - 20px);
+    min-height: 290px;
+  }
+
+  .containerInfo {
+    padding: 20px 30px;
+  }
+
+  .card p {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
   .container {
     flex-direction: column-reverse;
     background-position: left;
@@ -215,6 +248,14 @@
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 20px;
+  }
+
+  .card {
+    min-height: auto;
+    width: 100%;
+  }
+  .containerInfo {
+    padding: 40px;
   }
 
   .button {
