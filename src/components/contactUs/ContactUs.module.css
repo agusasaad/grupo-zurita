@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   height: auto;
-  background-image: url('./../../assets/image/bg-2.webp');
+  background-image: url("./../../assets/image/bg-2.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -172,6 +172,24 @@
 }
 
 @media (max-width: 1400px) {
+  .container {
+    padding: 80px 0px;
+    column-gap: 0px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+
+  .info_text {
+    max-width: 500px;
+  }
+
+  .form_container {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1000px) {
   .container {
     flex-direction: column-reverse;
     background-position: 70%;

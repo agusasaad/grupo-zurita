@@ -1,9 +1,9 @@
-'use client'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+"use client";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-const start = 'top 50%'
-const startMobile = 'top 80%'
+const start = "top 50%";
+const startMobile = "top 80%";
 export const animateInicio = (
   subtitleRef,
   titleRef,
@@ -21,10 +21,10 @@ export const animateInicio = (
         y: 0,
         opacity: 1,
         duration: 0.9,
-        ease: 'power3',
+        ease: "power3",
         stagger: 0.2,
       }
-    )
+    );
   } else {
     gsap.fromTo(
       [subtitleRef, titleRef, titleMobileRef, buttonRef],
@@ -36,12 +36,12 @@ export const animateInicio = (
         y: 0,
         opacity: 1,
         duration: 0.8,
-        ease: 'power3',
+        ease: "power3",
         stagger: 0.2,
       }
-    )
+    );
   }
-}
+};
 export const animateServices = (
   containerServices,
   cardContainerRef,
@@ -50,7 +50,7 @@ export const animateServices = (
   descriptionRef,
   buttonRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
   gsap.fromTo(
     cardContainerRef,
@@ -62,14 +62,14 @@ export const animateServices = (
       opacity: 1,
       scale: 1,
       duration: 0.9,
-      ease: 'power3',
+      ease: "power3",
       scrollTrigger: {
         trigger: containerServices,
         start: () => (window.innerWidth > 600 ? start : startMobile),
-        end: 'bottom 100%',
+        end: "bottom 100%",
       },
     }
-  )
+  );
 
   gsap.fromTo(
     [subtitleRef, titleRef, descriptionRef, buttonRef],
@@ -81,16 +81,16 @@ export const animateServices = (
       opacity: 1,
       x: 0,
       duration: 0.6,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.1,
       scrollTrigger: {
         trigger: containerServices,
         start: () => (window.innerWidth > 600 ? start : startMobile),
-        end: 'bottom 100%',
+        end: "bottom 100%",
       },
     }
-  )
-}
+  );
+};
 
 export const animateAboutUs = (
   containerAboutRef,
@@ -101,14 +101,14 @@ export const animateAboutUs = (
   imageRef,
   textCircularRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: containerAboutRef,
       start: () => (window.innerWidth > 600 ? start : startMobile),
-      end: 'bottom 100%',
+      end: "bottom 100%",
     },
-  })
+  });
 
   tl.fromTo(
     [subtitleRef, titleRef, descriptionRef, buttonRef],
@@ -120,7 +120,7 @@ export const animateAboutUs = (
       opacity: 1,
       x: 0,
       duration: 0.6,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.1,
     }
   )
@@ -135,7 +135,7 @@ export const animateAboutUs = (
           opacity: 1,
           x: 0,
           duration: 0.6,
-          ease: 'power1',
+          ease: "power1",
         }
       ),
       0
@@ -151,12 +151,12 @@ export const animateAboutUs = (
           opacity: 1,
           scale: 1,
           duration: 0.5,
-          ease: 'power1',
+          ease: "power1",
         }
       ),
       0.6
-    )
-}
+    );
+};
 
 export const animateProyectos = (
   containerProyectos,
@@ -168,15 +168,15 @@ export const animateProyectos = (
   buttonRightRef,
   touchAnimationRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: containerProyectos,
       start: () => (window.innerWidth > 600 ? start : startMobile),
-      end: 'bottom 100%',
+      end: "bottom 100%",
     },
-  })
+  });
 
   tl.fromTo(
     [subtitleRef, titleRef],
@@ -185,7 +185,7 @@ export const animateProyectos = (
       opacity: 1,
       x: 0,
       duration: 0.6,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.1,
     }
   )
@@ -197,7 +197,7 @@ export const animateProyectos = (
           opacity: 1,
           x: 0,
           duration: 0.6,
-          ease: 'power1',
+          ease: "power1",
         }
       ),
       0
@@ -210,7 +210,7 @@ export const animateProyectos = (
           opacity: 1,
           y: 0,
           duration: 0.4,
-          ease: 'power1',
+          ease: "power1",
           stagger: 0.1,
         }
       ),
@@ -223,20 +223,20 @@ export const animateProyectos = (
         {
           opacity: 1,
           duration: 0.5,
-          ease: 'power1',
+          ease: "power1",
           onComplete: () => {
             gsap.to(touchAnimationRef, {
-              display: 'none',
+              display: "none",
               opacity: 0,
               duration: 0.5,
-              ease: 'power1',
+              ease: "power1",
               delay: 0.5,
-            })
+            });
           },
         }
       ),
-      '<'
-    )
+      "<"
+    );
 
   // Animación para los botones izquierdo y derecho
   tl.fromTo(
@@ -245,7 +245,7 @@ export const animateProyectos = (
     {
       x: 0,
       duration: 0.4,
-      ease: 'power3',
+      ease: "power3",
     }
   ).fromTo(
     buttonRightRef,
@@ -253,11 +253,11 @@ export const animateProyectos = (
     {
       x: 0,
       duration: 0.4,
-      ease: 'power3',
+      ease: "power3",
     },
-    '<' // Comienza al mismo tiempo que la animación del botón izquierdo
-  )
-}
+    "<" // Comienza al mismo tiempo que la animación del botón izquierdo
+  );
+};
 
 export const animateContactUs = (
   formContainerRef,
@@ -266,7 +266,7 @@ export const animateContactUs = (
   descriptionRef,
   buttonRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
   gsap.fromTo(
     formContainerRef,
@@ -278,14 +278,14 @@ export const animateContactUs = (
       opacity: 1,
       scale: 1,
       duration: 0.9,
-      ease: 'power3',
+      ease: "power3",
       scrollTrigger: {
-        trigger: '#contactUs',
+        trigger: "#contactUs",
         start: () => (window.innerWidth > 600 ? start : startMobile),
-        end: 'bottom 100%',
+        end: "bottom 100%",
       },
     }
-  )
+  );
 
   gsap.fromTo(
     [subtitleRef, titleRef, descriptionRef, buttonRef],
@@ -297,16 +297,16 @@ export const animateContactUs = (
       opacity: 1,
       x: 0,
       duration: 0.6,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.1,
       scrollTrigger: {
-        trigger: '#contactUs',
+        trigger: "#contactUs",
         start: () => (window.innerWidth > 600 ? start : startMobile),
-        end: 'bottom 100%',
+        end: "bottom 100%",
       },
     }
-  )
-}
+  );
+};
 
 export const animateFooter = (
   containerFooter,
@@ -317,7 +317,7 @@ export const animateFooter = (
   lineRef,
   copyrightRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
   gsap.fromTo(
     [
       logoRef,
@@ -335,17 +335,16 @@ export const animateFooter = (
       opacity: 1,
       y: 0,
       duration: 0.5,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.1,
       scrollTrigger: {
         trigger: containerFooter,
         start: () => (window.innerWidth > 600 ? start : startMobile),
-        end: 'bottom 100%',
-        once: true,
+        end: "bottom 100%",
       },
     }
-  )
-}
+  );
+};
 
 export const animateServiciosPage = (
   subtitleRef,
@@ -355,7 +354,7 @@ export const animateServiciosPage = (
   buttonLeftRef,
   buttonRightRef
 ) => {
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
   gsap.fromTo(
     [subtitleRef, titleRef, lineRef],
     {
@@ -366,11 +365,11 @@ export const animateServiciosPage = (
       opacity: 1,
       x: 0,
       duration: 0.6,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.1,
       delay: 0.2,
     }
-  )
+  );
 
   gsap.fromTo(
     cardsRef,
@@ -379,11 +378,11 @@ export const animateServiciosPage = (
       opacity: 1,
       y: 0,
       duration: 0.5,
-      ease: 'power1',
+      ease: "power1",
       stagger: 0.2,
       delay: 0.4,
     }
-  )
+  );
 
   gsap.fromTo(
     buttonLeftRef,
@@ -393,10 +392,10 @@ export const animateServiciosPage = (
     {
       x: 0,
       duration: 0.4,
-      ease: 'power3',
+      ease: "power3",
       delay: 0.6,
     }
-  )
+  );
 
   gsap.fromTo(
     buttonRightRef,
@@ -406,8 +405,8 @@ export const animateServiciosPage = (
     {
       x: 0,
       duration: 0.4,
-      ease: 'power3',
+      ease: "power3",
       delay: 0.6,
     }
-  )
-}
+  );
+};

@@ -1,20 +1,20 @@
-'use client'
-import styles from './AboutUs.module.css'
-import Image from 'next/image'
-import image_about from '@/assets/image/about-back.png'
-import { useEffect, useRef, useState } from 'react'
-import TextCircular from './textCircular/TextCircular'
-import { animateAboutUs } from '../Animates/Animates'
+"use client";
+import styles from "./AboutUs.module.css";
+import Image from "next/image";
+import image_about from "@/assets/image/about-back.png";
+import { useEffect, useRef, useState } from "react";
+import TextCircular from "./textCircular/TextCircular";
+import { animateAboutUs } from "../Animates/Animates";
 
 const AboutUs = () => {
-  const [showMore, setShowMore] = useState(false)
-  const containerAboutRef = useRef(null)
-  const subtitleRef = useRef(null)
-  const titleRef = useRef(null)
-  const descriptionRef = useRef(null)
-  const buttonRef = useRef(null)
-  const imageRef = useRef(null)
-  const textCircularRef = useRef(null)
+  const [showMore, setShowMore] = useState(false);
+  const containerAboutRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const buttonRef = useRef(null);
+  const imageRef = useRef(null);
+  const textCircularRef = useRef(null);
 
   useEffect(() => {
     animateAboutUs(
@@ -25,16 +25,16 @@ const AboutUs = () => {
       buttonRef.current,
       imageRef.current,
       textCircularRef.current
-    )
-  }, [])
+    );
+  }, []);
 
   return (
-    <div className={styles.container} id='aboutUs' ref={containerAboutRef}>
+    <div className={styles.container} id="aboutUs" ref={containerAboutRef}>
       <div className={styles.info_text}>
         <span ref={subtitleRef}>SOBRE NOSOTROS</span>
         <h2 ref={titleRef}>Grupo Zurita</h2>
         <p
-          className={`${styles.description} ${showMore ? styles.show : ''}`}
+          className={`${styles.description} ${showMore ? styles.show : ""}`}
           ref={descriptionRef}
         >
           Somos una empresa familiar surgida en el año 1984 en Buenos Aires.
@@ -54,7 +54,7 @@ const AboutUs = () => {
           onClick={() => setShowMore(!showMore)}
           ref={buttonRef}
         >
-          {showMore ? 'Ver menos' : 'Ver más'}
+          {showMore ? "Ver menos" : "Ver más"}
         </button>
       </div>
       <div className={styles.image_container} ref={imageRef}>
@@ -63,18 +63,20 @@ const AboutUs = () => {
           src={image_about}
           width={700}
           height={500}
-          alt='imagen de Grupo Zurita'
+          alt="imagen de Grupo Zurita"
           style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
+            objectFit: "cover",
+            objectPosition: "center",
           }}
         />
-        <div className={styles.text_container} ref={textCircularRef}>
-          <TextCircular text='GRUPO ZURITA - 34 AÑOS DE EXPERENCIA - ' />
+        <div className={styles.container_text}>
+          <div className={styles.text_container} ref={textCircularRef}>
+            <TextCircular text="GRUPO ZURITA - 34 AÑOS DE EXPERENCIA - " />
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutUs
+export default AboutUs;
